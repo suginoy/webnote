@@ -1,0 +1,7 @@
+<% @memopage.comments.each do |comment| %>
+<div id="comment_<%= comment.id -%>" class="comment_box">
+<div class="comment_name"><%= comment.user.name %>
+  (<%= comment.updated_at.strftime("%Y/%m/%d-%H:%M") %>)</div>
+  <div class="comment_body"><%= comment.message %></div>
+</div>
+<% end %>

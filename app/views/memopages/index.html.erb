@@ -1,0 +1,39 @@
+<h1>Listing memopages</h1>
+
+<% if session[:login_user] %>
+<div id="menu">
+  ようこそ<%= session[:login_user].name -%>さん<br/>
+  <%= link_to '一覧表示', memopages_path %>
+  <%= link_to '新規作成', new_memopage_path %>
+  <%= link_to 'ログアウト', :controller => 'welcome', :action => 'logout' %>
+</div>
+<% end %>
+
+<div class="">
+  <%= form_for @search_form, :url => memopages_path, :html => { :method => :get } do |f| %>
+    検索キーワード<!--%= f.text_field "search", { :size => 20 } % -->
+    <%= f.search_field :q, { :size => 20 } %>
+    検索対象:<%= select_tag :public, options_for_select({ 'すべてのページ'   => 'all',
+                                                          '公開中のページ'   => 'open',
+                                                          '自分のページのみ' => 'self' },
+                                                        session[:public] ) %>
+    <%= f.submit '検索' %>
+  <% end %>
+</div>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Updated At</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= paginate @memopages %>
+  <%= render   @memopages %>
+</table>
+
+<br />
+
+<%= link_to 'New Memopage', new_memopage_path %>

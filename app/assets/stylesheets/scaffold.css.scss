@@ -1,0 +1,116 @@
+body { background-color: #e0ffe0; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { 
+  color: #000;
+  &:visited { color: #666; }
+  &:hover { color: #fff; background-color:#000; }
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+/* ################ */
+#logo {
+  float: left;
+}
+
+#title {
+  border: 1px solid silver;
+  background-color: white;
+  text-align: left;
+  paddng: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+  float: left;
+}
+
+#menu {
+  float: right;
+  border: 1px solid silver;
+  background-color: white;
+  padding: 5px;
+  width: 40%;
+  text-align: right;
+}
+
+#header_bottom {
+  clear: both;
+}
+
+#main_content {
+  margin: 5px 20px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid silver;
+}
+
+#footer {
+  border: 1px solid silver;
+  background-color: white;
+  text-align: center;
+}
+
+table {
+  margin: 5px;
+}
+
+th {
+  background-color: #e0ffe0;
+}
+
+h1 {
+  border: 3px double silver;
+  height: 1.5em;
+  padding: 3px 0 0 5px;
+  background-color: #f0f0ff;
+}
+

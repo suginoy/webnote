@@ -1,0 +1,29 @@
+<%= form_for(@memopage) do |f| %>
+  <% if @memopage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memopage.errors.count, "error") %> prohibited this memopage from being saved:</h2>
+
+      <ul>
+      <% @memopage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :public %><br />
+    <%= f.check_box :public %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @memopage.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @memopage.content %>
+</p>
+
+<p>
+  <b>Public:</b>
+  <%= @memopage.public %>
+</p>
+
+
+
+<% if @memopage.user == session[:login_user] %>
+<%= link_to 'Edit', edit_memopage_path(@memopage) %> |
+<% end %>
+<%= link_to 'Back', memopages_path %>
+
+<hr/>
+
+<h3>コメント</h3>
+<div id="comments">
+<%= render :partial => 'comments' %>
+</div>
+
+<%= form_tag( {:action => 'add_comment'}, { :remote => true }) do %>
+<%= hidden_field :comment, :memopage_id, :value => @memopage[:id] %>
+<%= hidden_field :comment, :user_id, :value => session[:login_user][:id] %>
+<%= text_area :comment, :message %>
+<%= submit_tag %>
+<% end %>

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= memopage.title %></td>
+  <td><%= memopage.content %></td>
+  <td><%= memopage.updated_at %></td>
+  <td><%= link_to 'Show', memopage %></td>
+  <% if memopage.user == session[:login_user] %>
+  <td><%= link_to 'Edit', edit_memopage_path(memopage) %></td>
+  <td><%= link_to 'Destroy', memopage, confirm: 'Are you sure?', method: :delete %></td>
+  <% end %>
+</tr>

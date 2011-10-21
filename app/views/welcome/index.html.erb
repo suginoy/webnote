@@ -1,0 +1,20 @@
+<h1>ログイン</h1>
+
+<%#= start_form_tag :action => 'login' %>
+<%= form_for(@user, :url => '/welcome/login') do |f| %>
+  <p>
+    <%= f.label :name, 'ログイン名' %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password %>
+  </p>
+  <%= f.submit "ログイン" %>
+<% end %>
+
+<hr />
+
+<%= link_to 'ユーザの新規登録', :action => "new_user" %>
+
+<p>Find me in app/views/welcome/index.html.erb</p>

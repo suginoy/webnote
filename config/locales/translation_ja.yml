@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      memopage: "メモページ"
+    attributes:
+      memopage:
+        title: "タイトル"
+        blank: "空白です"
+        content: "内容"

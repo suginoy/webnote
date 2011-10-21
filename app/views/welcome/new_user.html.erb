@@ -1,0 +1,37 @@
+<h1>ユーザ登録</h1>
+
+<%#= error_massages_for 'user' %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this memopage from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%#= start_form_tag :action => 'login' %>
+<%= form_tag({ :controller => 'welcome', :action => 'create_user'}) do |f| %>
+  <p>
+    <%= label :user, :name, 'ログイン名' %>
+    <%= text_field :user, :name %>
+  </p>
+  <p>
+    <%= label :user, :password, 'パスワード' %>
+    <%= password_field :user, :password %>
+  </p>
+  <p>
+    <%= label :user, :password_confirmation, 'パスワード(確認用)' %>
+    <%= password_field :user, :password_confirmation %>
+  </p>
+  <%= submit_tag '登録' %>
+<% end %>
+
+<br />
+
+<%= link_to '戻る', :action => "index" %>
+
+<p>Find me in app/views/welcome/index.html.erb</p>

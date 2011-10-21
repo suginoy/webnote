@@ -1,0 +1,2 @@
+module MemopagesHelper
+end
